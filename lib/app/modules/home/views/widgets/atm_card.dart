@@ -159,7 +159,7 @@ class AtmCard extends StatelessWidget {
                           height: 40,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: Colors.red,
+                            color: Colors.grey,
                             image: DecorationImage(
                                 image: AssetImage("assets/logo/mandiri.png"),
                                 fit: BoxFit.cover),

@@ -172,9 +172,11 @@ class NewsContainer2 extends StatelessWidget {
                         width: 100,
                         height: 100,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.green,
-                            image: DecorationImage(image: base64News(index))),
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                          image: DecorationImage(
+                              image: base64News(index), fit: BoxFit.fitWidth),
+                        ),
                       ),
                     ],
                   ),
