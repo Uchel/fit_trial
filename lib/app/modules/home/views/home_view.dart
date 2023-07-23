@@ -1,13 +1,12 @@
 import 'package:fit_aja2/app/modules/home/views/components/info_sehat.dart';
 
-import 'package:fit_aja2/app/modules/home/views/components/news.dart';
-
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
 import 'components/appbar_card.dart';
+import 'components/news2.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
@@ -26,7 +25,7 @@ class HomeView extends GetView<HomeController> {
           children: [
             AppBarCard(controller: controller),
             InfoSehatContainer(controller: controller),
-            NewsContainer(controller: controller),
+            NewsContainer2(controller: controller),
           ],
         ),
       ),

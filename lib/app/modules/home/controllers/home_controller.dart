@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
@@ -82,15 +83,27 @@ class HomeController extends GetxController {
     }
   }
 
-// ========================================================= function
+  //Untuk Slider news
+  RxInt currentPage = 0.obs;
 
-  // var opacity = 1.0.obs;
+  ScrollController scrollController = ScrollController();
 
-  // void onPress() {
-  //   opacity.value = 0.4;
+  void onScroll() {
+    double itemWidth = Get.width * 0.9;
+    int currentPageValue = (scrollController.offset / itemWidth).round();
+    currentPage.value = currentPageValue;
+  }
 
-  //   Future.delayed(Duration(milliseconds: 200), () {
-  //     opacity.value = 1.0;
-  //   });
-  // }
+  @override
+  void onInit() {
+    super.onInit();
+    scrollController.addListener(onScroll);
+  }
+
+  @override
+  void onClose() {
+    scrollController.removeListener(onScroll);
+    scrollController.dispose();
+    super.onClose();
+  }
 }

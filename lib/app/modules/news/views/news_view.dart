@@ -37,11 +37,11 @@ class NewsView extends GetView<NewsController> {
             FutureBuilder(
               future: controller.getApiContent(),
               builder: (context, snapshot) {
-                return controller.isLoading.value
-                    ? Loading()
-                    : Expanded(
-                        child: Obx(
-                          () => Center(
+                return Expanded(
+                  child: Obx(
+                    () => controller.isLoading.value
+                        ? Loading()
+                        : Center(
                             child: ListView(
                               children: [
                                 for (var index = 0;
@@ -51,8 +51,8 @@ class NewsView extends GetView<NewsController> {
                               ],
                             ),
                           ),
-                        ),
-                      );
+                  ),
+                );
               },
             ),
           ],
